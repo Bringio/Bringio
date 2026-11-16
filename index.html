@@ -18,31 +18,33 @@ main{max-width:1100px;margin:auto;padding:26px 18px 70px}.hero{background:linear
 </style>
 </head>
 <body>
-<header><div class="nav"><div class="brand">BRING<span>IO</span></div><small>Online-Shop · Tübingen</small></div></header>
+<header><div class="nav"><div class="brand">BRING<span>IO</span></div><small>Einkaufsservice · Tübingen</small></div></header>
 <main>
-<section class="hero"><div class="eyebrow">Einkaufen leicht gemacht</div><h1>Dein Einkauf.<br>Direkt zu dir.</h1><p>Wähle Produkte aus dem BRINGIO-Shop, lege sie in deinen Warenkorb und sende deine Anfrage.</p><a class="btn" href="#bestellen">Jetzt Einkauf starten</a></section>
+<section class="hero"><div class="eyebrow">Einkaufen leicht gemacht</div><h1>Dein Einkauf.<br>Direkt zu dir.</h1><p>Wähle deinen Supermarkt, stelle deinen Warenkorb zusammen und lass dir deinen Einkauf bequem nach Hause liefern.</p><a class="btn" href="#bestellen">Jetzt Einkauf starten</a></section>
 
-<section class="section" id="bestellen"><h2>Online-Shop & Warenkorb</h2><p class="sub">Wähle deine Produkte aus, prüfe den Warenkorb und sende deine Anfrage. Die Zahlung erfolgt erst nach Bestätigung des endgültigen Betrags.</p>
+<section class="section" id="bestellen"><h2>Deine Bestellung</h2><p class="sub">Trage zuerst deine Kontaktdaten ein. Danach wählst du den Supermarkt und legst deine Produkte in den Warenkorb.</p>
 <div id="shop-panel" class="panel active">
- 
- <div class="warning">Preis-Hinweis: Die angezeigten Beispielpreise sind noch nicht als aktuelle Filialpreise bestätigt. Sie können je nach Supermarkt, Filiale und Angebot abweichen. Der endgültige Warenwert wird vor der Zahlung anhand des tatsächlichen Kassenpreises bestätigt.</div>
+ <form id="customer-form" class="grid section">
+  <div><label for="shop-name">Dein Name</label><input id="shop-name" required autocomplete="name" placeholder="Vor- und Nachname"></div>
+  <div><label for="shop-phone">Telefonnummer</label><input id="shop-phone" required type="tel" autocomplete="tel" placeholder="+49 …"></div>
+  <div><label for="shop-address">Lieferadresse</label><input id="shop-address" required autocomplete="street-address" placeholder="Straße und Hausnummer"></div>
+  <div><label for="shop-postcode">Postleitzahl</label><input id="shop-postcode" required inputmode="numeric" placeholder="z. B. 72070"></div>
+  <div class="full"><label for="shop-time">Gewünschtes Zeitfenster</label><select id="shop-time"><option>Nach Absprache</option><option>Vormittags</option><option>Mittags</option><option>Nachmittags</option><option>Abends</option></select></div>
+  <div class="full"><label for="shop-notes">Hinweise (optional)</label><textarea id="shop-notes" style="min-height:75px" placeholder="Ersatzprodukte, bevorzugte Marken oder weitere Hinweise"></textarea></div>
+ </form>
+
+ <div class="warning"><strong>Wichtiger Preis-Hinweis:</strong> Das sind unverbindliche Orientierungspreise, keine Live-Preise der ausgewählten Filiale. Angebote, Marken und Filialpreise können abweichen. Vor deiner Zahlung bestätigen wir den tatsächlichen Warenwert anhand der aktuellen Preise und des Kassenbons.</div>
  <div class="section"><label for="catalog-shop">Supermarkt</label><select id="catalog-shop"><option>Kaufland</option><option>Lidl</option><option>ALDI</option><option>REWE</option></select></div>
  <div class="products section" id="products"></div>
  <div class="catalogbox section"><h2>Dein Warenkorb</h2><div id="cart"><p class="hint">Dein Warenkorb ist noch leer.</p></div>
-  <div class="fee" style="margin-top:14px"><span>Warenkorb (vorläufige Preise)</span><strong id="cart-subtotal">0,00 €</strong></div>
+  <div class="fee" style="margin-top:14px"><span>Warenkorb (Orientierungspreise)</span><strong id="cart-subtotal">0,00 €</strong></div>
   <div class="fee" style="margin-top:8px"><span>Servicegebühr</span><strong>14,90 €</strong></div>
   <div class="total" style="margin-top:8px"><span>Geschätzte Gesamtsumme</span><strong id="cart-total">14,90 €</strong></div>
+  <p class="fineprint">Wenn du fertig bist, sende deine Anfrage über den Button unter deinen Kundendaten.</p>
+  <button class="btn" type="submit" form="customer-form">Warenkorb-Anfrage über WhatsApp senden</button>
  </div>
- <form id="shop-form" class="grid section">
-  <div><label for="shop-name">Dein Name</label><input id="shop-name" required autocomplete="name"></div>
-  <div><label for="shop-phone">Telefonnummer</label><input id="shop-phone" required type="tel" autocomplete="tel" placeholder="+49 …"></div>
-  <div><label for="shop-address">Lieferadresse in Tübingen</label><input id="shop-address" required autocomplete="street-address" placeholder="Straße und Hausnummer"></div>
-  <div><label for="shop-postcode">Postleitzahl</label><input id="shop-postcode" required inputmode="numeric" placeholder="72070"></div>
-  <div class="full"><label for="shop-notes">Hinweise (optional)</label><textarea id="shop-notes" style="min-height:75px" placeholder="Ersatzprodukte, Markenwünsche ..."></textarea></div>
-  <div class="full"><button class="btn" type="submit">Warenkorb-Anfrage senden</button></div>
- </form>
-</div>
-<div class="card section"><h2>So läuft die Zahlung</h2><p>1. Du sendest deine Anfrage. 2. BRINGIO prüft Verfügbarkeit, Warenkosten, Lieferzeit und Servicegebühr. 3. Du erhältst den bestätigten Gesamtbetrag und einen sicheren Zahlungslink. 4. Erst nach erfolgreicher Zahlung starten wir den Einkauf.</p><p class="fineprint">Die Anfrage allein löst keine Zahlung aus. Die Produktpreise werden vor dem offiziellen Start anhand der ausgewählten Märkte geprüft und aktualisiert. Bitte keine Kartendaten per WhatsApp senden.</p></div>
+
+<div class="card section"><h2>So läuft die Zahlung</h2><p>1. Du sendest deine Anfrage. 2. BRINGIO prüft Verfügbarkeit, Warenkosten, Lieferzeit und Servicegebühr. 3. Du erhältst den bestätigten Gesamtbetrag und einen sicheren Zahlungslink. 4. Erst nach erfolgreicher Zahlung starten wir den Einkauf.</p><p class="fineprint">Die Anfrage allein löst keine Zahlung aus. Die angezeigten Preise sind Orientierungspreise und keine Live-Preise. Der endgültige Betrag wird vor der Zahlung bestätigt. Bitte keine Kartendaten per WhatsApp senden.</p></div>
 </section>
 <section class="section card"><h2>Persönlich. Einfach. Zuverlässig.</h2><p>BRINGIO startet in Tübingen. Du erhältst eine transparente Abrechnung und den originalen Kassenbon.</p><p class="fineprint">BRINGIO befindet sich im Aufbau. Verbindliche Bestellungen und Zahlungen werden erst angenommen, sobald Zahlungsabwicklung, rechtliche Angaben und Servicebetrieb vollständig eingerichtet sind.</p></section>
 </main>
@@ -51,19 +53,42 @@ main{max-width:1100px;margin:auto;padding:26px 18px 70px}.hero{background:linear
 const WA='491777064275';
 const $=id=>document.getElementById(id);
 function euro(n){return n.toLocaleString('de-DE',{style:'currency',currency:'EUR'});}
+$('budget').addEventListener('input',updateListTotal);$('list-size').addEventListener('change',updateListTotal);
 const catalog=[
- {id:'milk',emoji:'🥛',name:'Milch 1,5 % (1 L)',price:1.19},
- {id:'bread',emoji:'🍞',name:'Vollkornbrot',price:2.49},
- {id:'eggs',emoji:'🥚',name:'Eier (6 Stück)',price:2.29},
- {id:'apples',emoji:'🍎',name:'Äpfel (1 kg)',price:2.99},
+ {id:'milk15',emoji:'🥛',name:'H-Milch 1,5 % (1 L)',price:1.09},
+ {id:'milk35',emoji:'🥛',name:'H-Milch 3,5 % (1 L)',price:1.15},
+ {id:'oat',emoji:'🌾',name:'Haferdrink (1 L)',price:1.49},
+ {id:'bread',emoji:'🍞',name:'Vollkornbrot (500 g)',price:2.29},
+ {id:'toast',emoji:'🍞',name:'Toastbrot (500 g)',price:1.49},
+ {id:'rolls',emoji:'🥐',name:'Brötchen (6 Stück)',price:1.79},
+ {id:'eggs6',emoji:'🥚',name:'Eier (6 Stück)',price:1.99},
+ {id:'eggs10',emoji:'🥚',name:'Eier (10 Stück)',price:3.19},
  {id:'butter',emoji:'🧈',name:'Butter (250 g)',price:2.19},
- {id:'pasta',emoji:'🍝',name:'Nudeln (500 g)',price:1.29},
- {id:'tomato',emoji:'🍅',name:'Tomaten (1 kg)',price:2.79},
- {id:'cheese',emoji:'🧀',name:'Gouda (Scheiben)',price:2.59},
- {id:'water',emoji:'💧',name:'Mineralwasser (6 × 1,5 L)',price:3.99}
-];
+ {id:'yogurt',emoji:'🥣',name:'Naturjoghurt (500 g)',price:1.19},
+ {id:'cheese',emoji:'🧀',name:'Gouda in Scheiben (200 g)',price:2.29},
+ {id:'quark',emoji:'🥣',name:'Magerquark (500 g)',price:1.39},
+ {id:'pasta',emoji:'🍝',name:'Nudeln (500 g)',price:0.99},
+ {id:'rice',emoji:'🍚',name:'Langkornreis (1 kg)',price:2.19},
+ {id:'flour',emoji:'🌾',name:'Weizenmehl (1 kg)',price:0.79},
+ {id:'sugar',emoji:'🧂',name:'Zucker (1 kg)',price:1.09},
+ {id:'oil',emoji:'🫒',name:'Rapsöl (1 L)',price:1.79},
+ {id:'tomato',emoji:'🍅',name:'Passierte Tomaten (500 g)',price:0.89},
+ {id:'apples',emoji:'🍎',name:'Äpfel (1 kg)',price:2.49},
+ {id:'bananas',emoji:'🍌',name:'Bananen (1 kg)',price:1.49},
+ {id:'potatoes',emoji:'🥔',name:'Kartoffeln (2 kg)',price:2.99},
+ {id:'tomatoes',emoji:'🍅',name:'Tomaten (1 kg)',price:2.49},
+ {id:'cucumber',emoji:'🥒',name:'Gurke (1 Stück)',price:0.99},
+ {id:'carrots',emoji:'🥕',name:'Karotten (1 kg)',price:1.29},
+ {id:'chicken',emoji:'🍗',name:'Hähnchenbrust (400 g)',price:4.99},
+ {id:'mince',emoji:'🥩',name:'Hackfleisch (500 g)',price:4.49},
+ {id:'water',emoji:'💧',name:'Mineralwasser (6 × 1,5 L)',price:3.49},
+ {id:'juice',emoji:'🧃',name:'Orangensaft (1 L)',price:1.79},
+ {id:'coffee',emoji:'☕',name:'Gemahlener Kaffee (500 g)',price:5.49},
+ {id:'cereal',emoji:'🥣',name:'Cornflakes (500 g)',price:2.49},
+ {id:'chocolate',emoji:'🍫',name:'Vollmilchschokolade (100 g)',price:1.19}
+]
 let cart={};
-$('products').innerHTML=catalog.map(p=>`<article class="product"><div class="emoji">${p.emoji}</div><strong>${p.name}</strong><small>Beispielartikel</small><div class="price">${euro(p.price)}</div><button type="button" data-add="${p.id}">In den Warenkorb</button></article>`).join('');
+$('products').innerHTML=catalog.map(p=>`<article class="product"><div class="emoji">${p.emoji}</div><strong>${p.name}</strong><small>Orientierungspreis · unverbindlich</small><div class="price">${euro(p.price)}</div><button type="button" data-add="${p.id}">In den Warenkorb</button></article>`).join('');
 $('products').addEventListener('click',e=>{const id=e.target.dataset.add;if(!id)return;cart[id]=(cart[id]||0)+1;renderCart();});
 function renderCart(){
  const entries=catalog.filter(p=>cart[p.id]>0);const subtotal=entries.reduce((s,p)=>s+p.price*cart[p.id],0);
@@ -72,7 +97,7 @@ function renderCart(){
 }
 $('cart').addEventListener('click',e=>{let id=e.target.dataset.plus||e.target.dataset.minus;if(!id)return;cart[id]=(cart[id]||0)+(e.target.dataset.plus?1:-1);if(cart[id]<=0)delete cart[id];renderCart();});
 function sendWhatsApp(message){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(message),'_blank','noopener');}
-$('shop-form').addEventListener('submit',e=>{e.preventDefault();const entries=catalog.filter(p=>cart[p.id]>0);if(!entries.length){alert('Bitte füge zuerst Produkte zum Warenkorb hinzu.');return;}const subtotal=entries.reduce((s,p)=>s+p.price*cart[p.id],0);const lines=entries.map(p=>`${cart[p.id]} × ${p.name} (${euro(p.price)} je Stück)` ).join('\n');const msg=`Hallo BRINGIO! Ich möchte eine Warenkorb-Anfrage senden.\nSupermarkt: ${$('catalog-shop').value}\nWarenkorb:\n${lines}\nVorläufiger Warenwert: ${euro(subtotal)}\nServicegebühr (vorläufig): 14,90 €\nGeschätzte Summe: ${euro(subtotal+14.90)}\nName: ${$('shop-name').value.trim()}\nTelefon: ${$('shop-phone').value.trim()}\nLieferadresse: ${$('shop-address').value.trim()}, ${$('shop-postcode').value.trim()} Tübingen\nHinweise: ${$('shop-notes').value.trim()||'Keine'}\n\nBitte bestätigt Verfügbarkeit und Endbetrag und sendet mir einen sicheren Zahlungslink. Ich weiß, dass dies noch keine verbindliche Bestellung ist.`;sendWhatsApp(msg);});
+$('customer-form').addEventListener('submit',e=>{e.preventDefault();const entries=catalog.filter(p=>cart[p.id]>0);if(!entries.length){alert('Bitte füge zuerst Produkte zum Warenkorb hinzu.');return;}const subtotal=entries.reduce((s,p)=>s+p.price*cart[p.id],0);const lines=entries.map(p=>`${cart[p.id]} × ${p.name} (${euro(p.price)} je Stück)` ).join('\n');const msg=`Hallo BRINGIO! Ich möchte eine Warenkorb-Anfrage senden.\nSupermarkt: ${$('catalog-shop').value}\nWarenkorb:\n${lines}\nWarenwert nach Orientierungspreisen: ${euro(subtotal)}\nServicegebühr (vorläufig): 14,90 €\nGeschätzte Summe: ${euro(subtotal+14.90)}\nName: ${$('shop-name').value.trim()}\nTelefon: ${$('shop-phone').value.trim()}\nLieferadresse: ${$('shop-address').value.trim()}, ${$('shop-postcode').value.trim()}\nGewünschte Zeit: ${$('shop-time').value}\nHinweise: ${$('shop-notes').value.trim()||'Keine'}\n\nBitte bestätigt Verfügbarkeit und Endbetrag und sendet mir einen sicheren Zahlungslink. Ich weiß, dass dies noch keine verbindliche Bestellung ist.`;sendWhatsApp(msg);});
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
 </body></html>
