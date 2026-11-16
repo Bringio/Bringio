@@ -1,119 +1,99 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#1d392f">
-  <meta name="description" content="BRINGIO – Dein Einkauf. Direkt zu dir. Einkaufsservice in Tübingen.">
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" href="./icon.svg" type="image/svg+xml">
-  <title>BRINGIO – Dein Einkauf. Direkt zu dir.</title>
-  <style>
-    :root{--green:#1d392f;--lime:#b5f34d;--ink:#1c2822;--muted:#69766f;--paper:#f5f6ef;--line:#e0e6df}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
-    header{background:var(--green);color:white;padding:24px max(22px,calc((100% - 1120px)/2));font-size:30px;font-weight:900;letter-spacing:3px;position:sticky;top:0;z-index:5}
-    header span{color:var(--lime)}main{max-width:1120px;margin:auto;padding:28px 22px 70px}
-    .hero{background:linear-gradient(130deg,#1d392f,#315846);color:white;border-radius:34px;padding:54px 42px;margin:24px 0 56px}
-    .eyebrow{color:var(--lime);font-weight:800;letter-spacing:3px;text-transform:uppercase}.hero h1{font-size:clamp(42px,7vw,72px);line-height:1.05;margin:18px 0}.hero p{font-size:21px;max-width:680px;color:#e0e9e3}
-    .btn{display:inline-block;border:0;border-radius:18px;background:var(--lime);color:var(--green);font-size:18px;font-weight:800;padding:17px 25px;text-decoration:none;cursor:pointer}
-    h2{font-size:clamp(30px,5vw,44px);line-height:1.15;margin:0 0 12px}.sub{color:var(--muted);font-size:20px;margin:0 0 26px}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:24px 0 58px}.card,.formcard{background:white;border:1px solid var(--line);border-radius:26px;padding:26px}
-    .stepno{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#edf7df;color:#31583d;font-weight:900;font-size:22px}
-    .card h3{font-size:21px;margin:14px 0 8px}.card p{margin:0;font-size:17px}
-    .formwrap{margin-top:54px}.formcard{padding:30px;box-shadow:0 8px 30px #1d392f0a}
-    label{display:block;font-size:18px;font-weight:750;margin:18px 0 8px}
-    input,textarea,select{width:100%;font:inherit;font-size:17px;padding:15px 16px;border:2px solid #d2dbd3;border-radius:15px;background:white;color:var(--ink)}
-    textarea{min-height:145px;resize:vertical}input:focus,textarea:focus,select:focus{outline:3px solid #b5f34d66;border-color:#648b4b}
-    .stores{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.store{position:relative}.store input{position:absolute;opacity:0;pointer-events:none}.store span{display:block;text-align:center;border:2px solid var(--line);background:white;border-radius:18px;padding:17px;font-weight:800;color:#347bd6;cursor:pointer}.store input:checked+span{border-color:#648b4b;background:#f2f8e9}
-    .fee{margin:22px 0;background:#f0f7e9;padding:18px 20px;border-radius:18px;display:flex;justify-content:space-between;gap:12px;font-size:18px;font-weight:800}
-    .notice{color:var(--muted);font-size:16px;margin:18px 0}.whatsapp{width:100%;background:#20b85a;color:white;margin-top:12px}.whatsapp:disabled{opacity:.5;cursor:not-allowed}
-    .small{font-size:14px;color:var(--muted)}footer{background:var(--green);color:#e3ece5;padding:30px 22px;text-align:center}
-    @media(max-width:760px){.steps{grid-template-columns:1fr}.hero{padding:38px 26px;border-radius:28px}.formcard{padding:22px}.stores{grid-template-columns:1fr 1fr}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#15392f">
+<meta name="description" content="BRINGIO – persönlicher Einkaufsservice und Online-Warenkorb in Tübingen.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>BRINGIO – Dein Einkauf. Direkt zu dir.</title>
+<style>
+:root{--g:#15392f;--g2:#245844;--lime:#b5f34a;--cream:#f6f7f1;--ink:#17231e;--muted:#64736b;--line:#dfe7df;--white:#fff;--red:#9a3d32}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:var(--g);color:white;padding:17px 20px;position:sticky;top:0;z-index:10}.nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{font-size:1.7rem;font-weight:950;letter-spacing:.09em}.brand span{color:var(--lime)}.nav small{color:#d7e7dd}
+main{max-width:1100px;margin:auto;padding:26px 18px 70px}.hero{background:linear-gradient(125deg,var(--g),var(--g2));color:white;border-radius:28px;padding:42px 30px}.eyebrow{color:var(--lime);font-weight:850;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem}h1{font-size:clamp(2.3rem,6vw,4.4rem);line-height:1.02;margin:12px 0}.hero p{max-width:650px;color:#e1eee6;font-size:1.1rem}.btn{border:0;border-radius:13px;background:var(--lime);color:#173326;font-weight:850;padding:14px 20px;cursor:pointer;text-decoration:none;display:inline-block;font:inherit}.btn.secondary{background:var(--g);color:white}.section{margin-top:38px}.section h2{font-size:1.8rem;margin:0 0 7px}.sub{color:var(--muted);margin:0 0 17px}.switch{display:grid;grid-template-columns:1fr 1fr;gap:12px}.switch button{padding:17px;border:1px solid var(--line);border-radius:15px;background:white;color:var(--g);font-weight:850;font-size:1.02rem}.switch button.active{border:2px solid #55883c;background:#eff8e8}.panel{display:none}.panel.active{display:block}.shops{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0 20px}.shop{border:1px solid var(--line);border-radius:13px;background:white;padding:14px 7px;font-weight:800;color:#2763b5;cursor:pointer}.shop[aria-pressed=true]{border:2px solid #55883c;background:#eff8e8;color:var(--g)}
+.card,form,.catalogbox{background:white;border:1px solid var(--line);border-radius:20px;padding:22px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}label{display:block;font-weight:750;margin:0 0 6px}input,textarea,select{width:100%;padding:12px;border:1px solid #cbd6cd;border-radius:10px;font:inherit;background:white;color:var(--ink)}textarea{min-height:125px;resize:vertical}.hint{font-size:.88rem;color:var(--muted)}.fee,.total{background:#eff7e9;border-radius:13px;padding:15px;display:flex;justify-content:space-between;gap:10px;font-weight:850}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.product{border:1px solid var(--line);border-radius:15px;padding:14px;background:white;display:flex;flex-direction:column;gap:7px}.product .emoji{font-size:2rem}.product strong{font-size:1rem}.product small{color:var(--muted)}.product .price{font-weight:900;color:var(--g)}.product button{margin-top:auto;border:0;border-radius:10px;padding:10px;background:var(--g);color:white;font-weight:800}.cartline{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding:9px 0}.qty{display:flex;align-items:center;gap:7px}.qty button{border:1px solid var(--line);background:#f7f8f4;border-radius:8px;padding:4px 9px}.warning{background:#fff7e8;border:1px solid #f0d7a5;color:#654a16;border-radius:12px;padding:13px}.fineprint{font-size:.88rem;color:var(--muted)}.hidden{display:none!important}footer{background:var(--g);color:#dbe8df;padding:26px 18px;text-align:center}
+@media(max-width:720px){.hero{padding:30px 22px}.switch,.grid{grid-template-columns:1fr}.shops{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,1fr)}.full{grid-column:auto}.nav small{display:none}}
+</style>
 </head>
 <body>
-<header>BRING<span>IO</span></header>
+<header><div class="nav"><div class="brand">BRING<span>IO</span></div><small>Persönlicher Einkaufsservice · Tübingen</small></div></header>
 <main>
-  <section class="hero">
-    <div class="eyebrow">Einkaufen leicht gemacht</div>
-    <h1>Dein Einkauf.<br>Direkt zu dir.</h1>
-    <p>Du schickst uns deine Einkaufsliste. Wir kaufen für dich ein und bringen alles bequem zu dir nach Hause.</p>
-    <a class="btn" href="#anfrage">Jetzt Einkauf anfragen</a>
-  </section>
+<section class="hero"><div class="eyebrow">Einkaufen leicht gemacht</div><h1>Dein Einkauf.<br>Direkt zu dir.</h1><p>Wähle deinen Weg: Schicke uns deine persönliche Einkaufsliste oder stelle deinen Warenkorb im BRINGIO-Shop zusammen.</p><a class="btn" href="#bestellen">Jetzt Einkauf starten</a></section>
 
-  <section>
-    <h2>So einfach geht’s</h2><p class="sub">Mehr Zeit für die Dinge, die dir wichtig sind.</p>
-    <div class="steps">
-      <article class="card"><div class="stepno">1</div><h3>Einkaufsliste senden</h3><p>Wähle deinen Supermarkt und trage deine gewünschten Produkte ein.</p></article>
-      <article class="card"><div class="stepno">2</div><h3>Wir erledigen den Einkauf</h3><p>Wir kaufen nach deiner Liste ein und bewahren den Kassenbon auf.</p></article>
-      <article class="card"><div class="stepno">3</div><h3>Nach Hause liefern lassen</h3><p>Du erhältst deine Einkäufe direkt an deine Haustür.</p></article>
-    </div>
-  </section>
+<section class="section" id="bestellen"><h2>Wie möchtest du bestellen?</h2><p class="sub">Zwei einfache Möglichkeiten – beide mit Zahlung vor dem Einkauf, nachdem wir deine Anfrage geprüft und den Endbetrag bestätigt haben.</p>
+<div class="switch"><button id="tab-list" class="active" type="button">📝 Persönliche Einkaufsliste</button><button id="tab-shop" type="button">🛒 Online-Shop & Warenkorb</button></div>
 
-  <section class="formwrap" id="anfrage">
-    <h2>Deine Einkaufsanfrage</h2>
-    <p class="sub">Fülle das Formular aus und sende deine Einkaufsanfrage direkt per WhatsApp an BRINGIO.</p>
-    <div class="formcard">
-      <form id="orderForm">
-        <label>Welcher Laden?</label>
-        <div class="stores">
-          <label class="store"><input type="radio" name="store" value="Kaufland" checked><span>Kaufland</span></label>
-          <label class="store"><input type="radio" name="store" value="Lidl"><span>Lidl</span></label>
-          <label class="store"><input type="radio" name="store" value="ALDI"><span>ALDI</span></label>
-          <label class="store"><input type="radio" name="store" value="EDEKA"><span>EDEKA</span></label>
-          <label class="store"><input type="radio" name="store" value="REWE"><span>REWE</span></label>
-        </div>
-        <label for="items">Was sollen wir einkaufen? *</label>
-        <textarea id="items" required placeholder="Zum Beispiel:&#10;2 × Milch 1,5 %&#10;1 × Vollkornbrot&#10;6 × Eier&#10;1 kg Äpfel"></textarea>
-        <label for="name">Dein Name *</label><input id="name" required autocomplete="name" placeholder="Vor- und Nachname">
-        <label for="phone">Telefonnummer *</label><input id="phone" required type="tel" autocomplete="tel" placeholder="+49 ...">
-        <label for="address">Lieferadresse in Tübingen *</label><input id="address" required autocomplete="street-address" placeholder="Straße und Hausnummer">
-        <label for="zip">Postleitzahl *</label><input id="zip" required inputmode="numeric" autocomplete="postal-code" placeholder="z. B. 72070">
-        <label for="time">Gewünschtes Zeitfenster</label>
-        <select id="time"><option>Nach Absprache</option><option>Vormittags</option><option>Mittags</option><option>Nachmittags</option><option>Abends</option></select>
-        <label for="notes">Hinweise (optional)</label><textarea id="notes" style="min-height:90px" placeholder="Ersatzprodukte, bevorzugte Marken oder weitere Hinweise"></textarea>
-        <div class="fee"><span>Servicegebühr – ab</span><span>14,90 €</span></div>
-        <p class="notice">Die Kosten der Einkäufe werden separat anhand des Kassenbons abgerechnet. Die Servicegebühr und mögliche Fahrtkosten werden vor dem Einkauf bestätigt. Diese Anfrage ist noch keine verbindliche Bestellung und löst keine Zahlung aus.</p>
-        <button class="btn whatsapp" type="submit">Anfrage per WhatsApp senden</button>
-        <p class="small">Nach dem Klick öffnet sich WhatsApp mit deiner vorbereiteten Anfrage. Bitte prüfe die Nachricht und drücke dort auf „Senden“.</p>
-      </form>
-    </div>
-  </section>
-  <section class="card" style="margin-top:40px">
-    <h2>Persönlich. Einfach. Zuverlässig.</h2>
-    <p>BRINGIO startet in Tübingen. Unser Ziel ist ein unkomplizierter Einkaufsservice mit transparenter Abrechnung und dem originalen Kassenbon.</p>
-    <p class="notice">Deine Anfrage wird per WhatsApp an BRINGIO übermittelt. Wir prüfen Verfügbarkeit, Einkaufskosten und Lieferzeit und bestätigen anschließend persönlich. Erst nach unserer Bestätigung ist der Einkauf vereinbart.</p>
-  </section>
+<div id="list-panel" class="panel active">
+ <div class="section"><h2>1. Supermarkt wählen</h2><div class="shops" id="shops">
+ <button class="shop" type="button" aria-pressed="true">Kaufland</button><button class="shop" type="button" aria-pressed="false">Lidl</button><button class="shop" type="button" aria-pressed="false">ALDI</button><button class="shop" type="button" aria-pressed="false">EDEKA</button><button class="shop" type="button" aria-pressed="false">REWE</button></div></div>
+ <form id="list-form" class="grid">
+  <div class="full"><label for="items">Was sollen wir einkaufen?</label><textarea id="items" required placeholder="2 × Milch 1,5 %&#10;1 × Vollkornbrot&#10;6 × Eier&#10;1 kg Äpfel"></textarea></div>
+  <div><label for="budget">Geschätztes Warenbudget (€)</label><input id="budget" type="number" min="1" step="0.01" required placeholder="z. B. 45,00"></div>
+  <div><label for="list-size">Größe der Bestellung</label><select id="list-size"><option value="14.90">Klein – 14,90 € Service</option><option value="19.90">Mittel – 19,90 € Service</option><option value="24.90">Groß – 24,90 € Service</option></select></div>
+  <div class="full hint">Das Warenbudget ist zunächst eine Schätzung. Wir prüfen deine Liste und bestätigen den endgültigen Betrag inklusive Servicegebühr vor der Zahlung.</div>
+  <div class="full fee"><span>Voraussichtliche Summe</span><strong id="list-total">–</strong></div>
+  <div class="full"><button class="btn" type="submit">Anfrage zur Bestätigung senden</button></div>
+ </form>
+</div>
+
+<div id="shop-panel" class="panel">
+ <div class="warning">Beispielkatalog: Die angezeigten Preise sind Platzhalter zur Demonstration und keine aktuellen Supermarktpreise. Vor dem offiziellen Start müssen sie geprüft und gepflegt werden.</div>
+ <div class="section"><label for="catalog-shop">Supermarkt</label><select id="catalog-shop"><option>Kaufland</option><option>Lidl</option><option>ALDI</option><option>EDEKA</option><option>REWE</option></select></div>
+ <div class="products section" id="products"></div>
+ <div class="catalogbox section"><h2>Dein Warenkorb</h2><div id="cart"><p class="hint">Dein Warenkorb ist noch leer.</p></div>
+  <div class="fee" style="margin-top:14px"><span>Warenkorb (Beispielpreise)</span><strong id="cart-subtotal">0,00 €</strong></div>
+  <div class="fee" style="margin-top:8px"><span>Servicegebühr</span><strong>14,90 €</strong></div>
+  <div class="total" style="margin-top:8px"><span>Geschätzte Gesamtsumme</span><strong id="cart-total">14,90 €</strong></div>
+ </div>
+ <form id="shop-form" class="grid section">
+  <div><label for="shop-name">Dein Name</label><input id="shop-name" required autocomplete="name"></div>
+  <div><label for="shop-phone">Telefonnummer</label><input id="shop-phone" required type="tel" autocomplete="tel" placeholder="+49 …"></div>
+  <div><label for="shop-address">Lieferadresse in Tübingen</label><input id="shop-address" required autocomplete="street-address" placeholder="Straße und Hausnummer"></div>
+  <div><label for="shop-postcode">Postleitzahl</label><input id="shop-postcode" required inputmode="numeric" placeholder="72070"></div>
+  <div class="full"><label for="shop-notes">Hinweise (optional)</label><textarea id="shop-notes" style="min-height:75px" placeholder="Ersatzprodukte, Markenwünsche ..."></textarea></div>
+  <div class="full"><button class="btn" type="submit">Warenkorb-Anfrage senden</button></div>
+ </form>
+</div>
+<div class="card section"><h2>So läuft die Zahlung</h2><p>1. Du sendest deine Anfrage. 2. BRINGIO prüft Verfügbarkeit, Warenkosten, Lieferzeit und Servicegebühr. 3. Du erhältst den bestätigten Gesamtbetrag und einen sicheren Zahlungslink. 4. Erst nach erfolgreicher Zahlung starten wir den Einkauf.</p><p class="fineprint">Die Anfrage allein löst keine Zahlung aus. Die Beispielpreise im Online-Shop müssen vor dem echten Betrieb aktualisiert werden. Bitte keine Kartendaten per WhatsApp senden.</p></div>
+</section>
+<section class="section card"><h2>Persönlich. Einfach. Zuverlässig.</h2><p>BRINGIO startet in Tübingen. Du erhältst eine transparente Abrechnung und den originalen Kassenbon.</p><p class="fineprint">BRINGIO befindet sich im Aufbau. Verbindliche Bestellungen und Zahlungen werden erst angenommen, sobald Zahlungsabwicklung, rechtliche Angaben und Servicebetrieb vollständig eingerichtet sind.</p></section>
 </main>
-<footer>BRINGIO · Dein Einkauf. Direkt zu dir.</footer>
+<footer><strong>BRINGIO</strong><br>Dein Einkauf. Direkt zu dir.<br><small>© BRINGIO · Tübingen</small></footer>
 <script>
-  const WHATSAPP_NUMBER = "491777064275";
-  document.getElementById("orderForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const store = document.querySelector('input[name="store"]:checked')?.value || "Nicht ausgewählt";
-    const value = id => document.getElementById(id).value.trim();
-    const message = [
-      "Hallo BRINGIO! Ich möchte eine Einkaufsanfrage senden.",
-      "",
-      "Supermarkt: " + store,
-      "Einkaufsliste:",
-      value("items"),
-      "",
-      "Name: " + value("name"),
-      "Telefon: " + value("phone"),
-      "Lieferadresse: " + value("address"),
-      "PLZ: " + value("zip"),
-      "Gewünschte Zeit: " + value("time"),
-      "Hinweise: " + (value("notes") || "Keine"),
-      "",
-      "Ich weiß, dass dies zunächst eine Anfrage und noch keine verbindliche Bestellung ist."
-    ].join("\n");
-    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
-    window.location.href = url;
-  });
-  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-    window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
-  }
+const WA='491777064275';
+let selectedShop='Kaufland';
+const $=id=>document.getElementById(id);
+function euro(n){return n.toLocaleString('de-DE',{style:'currency',currency:'EUR'});}
+function showTab(which){$('tab-list').classList.toggle('active',which==='list');$('tab-shop').classList.toggle('active',which==='shop');$('list-panel').classList.toggle('active',which==='list');$('shop-panel').classList.toggle('active',which==='shop');}
+$('tab-list').onclick=()=>showTab('list');$('tab-shop').onclick=()=>showTab('shop');
+document.querySelectorAll('.shop').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.shop').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');selectedShop=b.textContent;}));
+function updateListTotal(){const budget=Number($('budget').value)||0;const fee=Number($('list-size').value);$('list-total').textContent=budget?euro(budget+fee):'–';}
+$('budget').addEventListener('input',updateListTotal);$('list-size').addEventListener('change',updateListTotal);
+const catalog=[
+ {id:'milk',emoji:'🥛',name:'Milch 1,5 % (1 L)',price:1.19},
+ {id:'bread',emoji:'🍞',name:'Vollkornbrot',price:2.49},
+ {id:'eggs',emoji:'🥚',name:'Eier (6 Stück)',price:2.29},
+ {id:'apples',emoji:'🍎',name:'Äpfel (1 kg)',price:2.99},
+ {id:'butter',emoji:'🧈',name:'Butter (250 g)',price:2.19},
+ {id:'pasta',emoji:'🍝',name:'Nudeln (500 g)',price:1.29},
+ {id:'tomato',emoji:'🍅',name:'Tomaten (1 kg)',price:2.79},
+ {id:'cheese',emoji:'🧀',name:'Gouda (Scheiben)',price:2.59},
+ {id:'water',emoji:'💧',name:'Mineralwasser (6 × 1,5 L)',price:3.99}
+];
+let cart={};
+$('products').innerHTML=catalog.map(p=>`<article class="product"><div class="emoji">${p.emoji}</div><strong>${p.name}</strong><small>Beispielartikel</small><div class="price">${euro(p.price)}</div><button type="button" data-add="${p.id}">In den Warenkorb</button></article>`).join('');
+$('products').addEventListener('click',e=>{const id=e.target.dataset.add;if(!id)return;cart[id]=(cart[id]||0)+1;renderCart();});
+function renderCart(){
+ const entries=catalog.filter(p=>cart[p.id]>0);const subtotal=entries.reduce((s,p)=>s+p.price*cart[p.id],0);
+ $('cart').innerHTML=entries.length?entries.map(p=>`<div class="cartline"><span>${p.name}</span><span class="qty"><button type="button" data-minus="${p.id}">−</button>${cart[p.id]}<button type="button" data-plus="${p.id}">+</button></span><strong>${euro(p.price*cart[p.id])}</strong></div>`).join(''):'<p class="hint">Dein Warenkorb ist noch leer.</p>';
+ $('cart-subtotal').textContent=euro(subtotal);$('cart-total').textContent=euro(subtotal+14.90);
+}
+$('cart').addEventListener('click',e=>{let id=e.target.dataset.plus||e.target.dataset.minus;if(!id)return;cart[id]=(cart[id]||0)+(e.target.dataset.plus?1:-1);if(cart[id]<=0)delete cart[id];renderCart();});
+function sendWhatsApp(message){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(message),'_blank','noopener');}
+$('list-form').addEventListener('submit',e=>{e.preventDefault();const budget=Number($('budget').value);const fee=Number($('list-size').value);const msg=`Hallo BRINGIO! Ich möchte eine persönliche Einkaufsliste anfragen.\nSupermarkt: ${selectedShop}\nEinkaufsliste:\n${$('items').value.trim()}\nGeschätztes Warenbudget: ${euro(budget)}\nServicegebühr (vorläufig): ${euro(fee)}\nGeschätzte Summe: ${euro(budget+fee)}\n\nBitte prüft die Anfrage und sendet mir den bestätigten Gesamtbetrag sowie einen sicheren Zahlungslink. Ich weiß, dass dies noch keine verbindliche Bestellung ist.`;sendWhatsApp(msg);});
+$('shop-form').addEventListener('submit',e=>{e.preventDefault();const entries=catalog.filter(p=>cart[p.id]>0);if(!entries.length){alert('Bitte füge zuerst Produkte zum Warenkorb hinzu.');return;}const subtotal=entries.reduce((s,p)=>s+p.price*cart[p.id],0);const lines=entries.map(p=>`${cart[p.id]} × ${p.name} (${euro(p.price)} je Stück)` ).join('\n');const msg=`Hallo BRINGIO! Ich möchte eine Warenkorb-Anfrage senden.\nSupermarkt: ${$('catalog-shop').value}\nWarenkorb:\n${lines}\nWarenwert nach Beispielpreisen: ${euro(subtotal)}\nServicegebühr (vorläufig): 14,90 €\nGeschätzte Summe: ${euro(subtotal+14.90)}\nName: ${$('shop-name').value.trim()}\nTelefon: ${$('shop-phone').value.trim()}\nLieferadresse: ${$('shop-address').value.trim()}, ${$('shop-postcode').value.trim()} Tübingen\nHinweise: ${$('shop-notes').value.trim()||'Keine'}\n\nBitte bestätigt Verfügbarkeit und Endbetrag und sendet mir einen sicheren Zahlungslink. Ich weiß, dass dies noch keine verbindliche Bestellung ist.`;sendWhatsApp(msg);});
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
-</body>
-</html>
+</body></html>
