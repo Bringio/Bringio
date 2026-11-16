@@ -18,38 +18,18 @@ main{max-width:1100px;margin:auto;padding:26px 18px 70px}.hero{background:linear
 </style>
 </head>
 <body>
-<header><div class="nav"><div class="brand">BRING<span>IO</span></div><small>Persönlicher Einkaufsservice · Tübingen</small></div></header>
+<header><div class="nav"><div class="brand">BRING<span>IO</span></div><small>Online-Shop · Tübingen</small></div></header>
 <main>
-<section class="hero"><div class="eyebrow">Einkaufen leicht gemacht</div><h1>Dein Einkauf.<br>Direkt zu dir.</h1><p>Wähle deinen Weg: Schicke uns deine persönliche Einkaufsliste oder stelle deinen Warenkorb im BRINGIO-Shop zusammen.</p><a class="btn" href="#bestellen">Jetzt Einkauf starten</a></section>
+<section class="hero"><div class="eyebrow">Einkaufen leicht gemacht</div><h1>Dein Einkauf.<br>Direkt zu dir.</h1><p>Wähle Produkte aus dem BRINGIO-Shop, lege sie in deinen Warenkorb und sende deine Anfrage.</p><a class="btn" href="#bestellen">Jetzt Einkauf starten</a></section>
 
-<section class="section" id="bestellen"><h2>Wie möchtest du bestellen?</h2><p class="sub">Zwei einfache Möglichkeiten – beide mit Zahlung vor dem Einkauf, nachdem wir deine Anfrage geprüft und den Endbetrag bestätigt haben.</p>
-<div class="switch"><button id="tab-list" class="active" type="button">📝 Persönliche Einkaufsliste</button><button id="tab-shop" type="button">🛒 Online-Shop & Warenkorb</button></div>
-
-<div id="list-panel" class="panel active">
- <div class="section"><h2>1. Supermarkt wählen</h2><div class="shops" id="shops">
- <button class="shop" type="button" aria-pressed="true">Kaufland</button><button class="shop" type="button" aria-pressed="false">Lidl</button><button class="shop" type="button" aria-pressed="false">ALDI</button><button class="shop" type="button" aria-pressed="false">EDEKA</button><button class="shop" type="button" aria-pressed="false">REWE</button></div></div>
- <form id="list-form" class="grid">
-  <div class="full"><label for="items">Was sollen wir einkaufen?</label><textarea id="items" required placeholder="2 × Milch 1,5 %&#10;1 × Vollkornbrot&#10;6 × Eier&#10;1 kg Äpfel"></textarea></div>
-  <div><label for="budget">Geschätztes Warenbudget (€)</label><input id="budget" type="number" min="1" step="0.01" required placeholder="z. B. 45,00"></div>
-  <div><label for="list-size">Größe der Bestellung</label><select id="list-size"><option value="14.90">Klein – 14,90 € Service</option><option value="19.90">Mittel – 19,90 € Service</option><option value="24.90">Groß – 24,90 € Service</option></select></div>
-  <div class="full"><label for="list-name">Dein vollständiger Name</label><input id="list-name" required autocomplete="name" placeholder="Vor- und Nachname"></div>
-  <div><label for="list-phone">Telefonnummer</label><input id="list-phone" required type="tel" autocomplete="tel" placeholder="+49 …"></div>
-  <div><label for="list-postcode">Postleitzahl (PLZ)</label><input id="list-postcode" required inputmode="numeric" autocomplete="postal-code" placeholder="z. B. 72070"></div>
-  <div class="full"><label for="list-address">Lieferadresse in Tübingen</label><input id="list-address" required autocomplete="street-address" placeholder="Straße und Hausnummer"></div>
-  <div class="full"><label for="list-time">Gewünschtes Zeitfenster</label><select id="list-time"><option>Nach Absprache</option><option>Vormittags</option><option>Mittags</option><option>Nachmittags</option><option>Abends</option></select></div>
-  <div class="full"><label for="list-notes">Hinweise (optional)</label><textarea id="list-notes" style="min-height:75px" placeholder="Ersatzprodukte, bevorzugte Marken oder weitere Hinweise"></textarea></div>
-  <div class="full hint">Das Warenbudget ist zunächst eine Schätzung. Wir prüfen deine Liste und bestätigen den endgültigen Betrag inklusive Servicegebühr vor der Zahlung.</div>
-  <div class="full fee"><span>Voraussichtliche Summe</span><strong id="list-total">–</strong></div>
-  <div class="full"><button class="btn" type="submit">Anfrage zur Bestätigung senden</button></div>
- </form>
-</div>
-
-<div id="shop-panel" class="panel">
- <div class="warning">Beispielkatalog: Die angezeigten Preise sind Platzhalter zur Demonstration und keine aktuellen Supermarktpreise. Vor dem offiziellen Start müssen sie geprüft und gepflegt werden.</div>
- <div class="section"><label for="catalog-shop">Supermarkt</label><select id="catalog-shop"><option>Kaufland</option><option>Lidl</option><option>ALDI</option><option>EDEKA</option><option>REWE</option></select></div>
+<section class="section" id="bestellen"><h2>Online-Shop & Warenkorb</h2><p class="sub">Wähle deine Produkte aus, prüfe den Warenkorb und sende deine Anfrage. Die Zahlung erfolgt erst nach Bestätigung des endgültigen Betrags.</p>
+<div id="shop-panel" class="panel active">
+ 
+ <div class="warning">Preis-Hinweis: Die angezeigten Beispielpreise sind noch nicht als aktuelle Filialpreise bestätigt. Sie können je nach Supermarkt, Filiale und Angebot abweichen. Der endgültige Warenwert wird vor der Zahlung anhand des tatsächlichen Kassenpreises bestätigt.</div>
+ <div class="section"><label for="catalog-shop">Supermarkt</label><select id="catalog-shop"><option>Kaufland</option><option>Lidl</option><option>ALDI</option><option>REWE</option></select></div>
  <div class="products section" id="products"></div>
  <div class="catalogbox section"><h2>Dein Warenkorb</h2><div id="cart"><p class="hint">Dein Warenkorb ist noch leer.</p></div>
-  <div class="fee" style="margin-top:14px"><span>Warenkorb (Beispielpreise)</span><strong id="cart-subtotal">0,00 €</strong></div>
+  <div class="fee" style="margin-top:14px"><span>Warenkorb (vorläufige Preise)</span><strong id="cart-subtotal">0,00 €</strong></div>
   <div class="fee" style="margin-top:8px"><span>Servicegebühr</span><strong>14,90 €</strong></div>
   <div class="total" style="margin-top:8px"><span>Geschätzte Gesamtsumme</span><strong id="cart-total">14,90 €</strong></div>
  </div>
@@ -62,21 +42,15 @@ main{max-width:1100px;margin:auto;padding:26px 18px 70px}.hero{background:linear
   <div class="full"><button class="btn" type="submit">Warenkorb-Anfrage senden</button></div>
  </form>
 </div>
-<div class="card section"><h2>So läuft die Zahlung</h2><p>1. Du sendest deine Anfrage. 2. BRINGIO prüft Verfügbarkeit, Warenkosten, Lieferzeit und Servicegebühr. 3. Du erhältst den bestätigten Gesamtbetrag und einen sicheren Zahlungslink. 4. Erst nach erfolgreicher Zahlung starten wir den Einkauf.</p><p class="fineprint">Die Anfrage allein löst keine Zahlung aus. Die Beispielpreise im Online-Shop müssen vor dem echten Betrieb aktualisiert werden. Bitte keine Kartendaten per WhatsApp senden.</p></div>
+<div class="card section"><h2>So läuft die Zahlung</h2><p>1. Du sendest deine Anfrage. 2. BRINGIO prüft Verfügbarkeit, Warenkosten, Lieferzeit und Servicegebühr. 3. Du erhältst den bestätigten Gesamtbetrag und einen sicheren Zahlungslink. 4. Erst nach erfolgreicher Zahlung starten wir den Einkauf.</p><p class="fineprint">Die Anfrage allein löst keine Zahlung aus. Die Produktpreise werden vor dem offiziellen Start anhand der ausgewählten Märkte geprüft und aktualisiert. Bitte keine Kartendaten per WhatsApp senden.</p></div>
 </section>
 <section class="section card"><h2>Persönlich. Einfach. Zuverlässig.</h2><p>BRINGIO startet in Tübingen. Du erhältst eine transparente Abrechnung und den originalen Kassenbon.</p><p class="fineprint">BRINGIO befindet sich im Aufbau. Verbindliche Bestellungen und Zahlungen werden erst angenommen, sobald Zahlungsabwicklung, rechtliche Angaben und Servicebetrieb vollständig eingerichtet sind.</p></section>
 </main>
 <footer><strong>BRINGIO</strong><br>Dein Einkauf. Direkt zu dir.<br><small>© BRINGIO · Tübingen</small></footer>
 <script>
 const WA='491777064275';
-let selectedShop='Kaufland';
 const $=id=>document.getElementById(id);
 function euro(n){return n.toLocaleString('de-DE',{style:'currency',currency:'EUR'});}
-function showTab(which){$('tab-list').classList.toggle('active',which==='list');$('tab-shop').classList.toggle('active',which==='shop');$('list-panel').classList.toggle('active',which==='list');$('shop-panel').classList.toggle('active',which==='shop');}
-$('tab-list').onclick=()=>showTab('list');$('tab-shop').onclick=()=>showTab('shop');
-document.querySelectorAll('.shop').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.shop').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');selectedShop=b.textContent;}));
-function updateListTotal(){const budget=Number($('budget').value)||0;const fee=Number($('list-size').value);$('list-total').textContent=budget?euro(budget+fee):'–';}
-$('budget').addEventListener('input',updateListTotal);$('list-size').addEventListener('change',updateListTotal);
 const catalog=[
  {id:'milk',emoji:'🥛',name:'Milch 1,5 % (1 L)',price:1.19},
  {id:'bread',emoji:'🍞',name:'Vollkornbrot',price:2.49},
@@ -98,8 +72,7 @@ function renderCart(){
 }
 $('cart').addEventListener('click',e=>{let id=e.target.dataset.plus||e.target.dataset.minus;if(!id)return;cart[id]=(cart[id]||0)+(e.target.dataset.plus?1:-1);if(cart[id]<=0)delete cart[id];renderCart();});
 function sendWhatsApp(message){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(message),'_blank','noopener');}
-$('list-form').addEventListener('submit',e=>{e.preventDefault();const budget=Number($('budget').value);const fee=Number($('list-size').value);const msg=`Hallo BRINGIO! Ich möchte eine persönliche Einkaufsliste anfragen.\\nSupermarkt: ${selectedShop}\\nEinkaufsliste:\\n${$('items').value.trim()}\\nGeschätztes Warenbudget: ${euro(budget)}\\nServicegebühr (vorläufig): ${euro(fee)}\\nGeschätzte Summe: ${euro(budget+fee)}\\nName: ${$('list-name').value.trim()}\\nTelefon: ${$('list-phone').value.trim()}\\nLieferadresse: ${$('list-address').value.trim()}\\nPLZ: ${$('list-postcode').value.trim()}\\nGewünschtes Zeitfenster: ${$('list-time').value}\\nHinweise: ${$('list-notes').value.trim()||'Keine'}\\n\\nBitte prüft die Anfrage und sendet mir den bestätigten Gesamtbetrag sowie einen sicheren Zahlungslink. Ich weiß, dass dies noch keine verbindliche Bestellung ist.`;sendWhatsApp(msg);});
-$('shop-form').addEventListener('submit',e=>{e.preventDefault();const entries=catalog.filter(p=>cart[p.id]>0);if(!entries.length){alert('Bitte füge zuerst Produkte zum Warenkorb hinzu.');return;}const subtotal=entries.reduce((s,p)=>s+p.price*cart[p.id],0);const lines=entries.map(p=>`${cart[p.id]} × ${p.name} (${euro(p.price)} je Stück)` ).join('\n');const msg=`Hallo BRINGIO! Ich möchte eine Warenkorb-Anfrage senden.\nSupermarkt: ${$('catalog-shop').value}\nWarenkorb:\n${lines}\nWarenwert nach Beispielpreisen: ${euro(subtotal)}\nServicegebühr (vorläufig): 14,90 €\nGeschätzte Summe: ${euro(subtotal+14.90)}\nName: ${$('shop-name').value.trim()}\nTelefon: ${$('shop-phone').value.trim()}\nLieferadresse: ${$('shop-address').value.trim()}, ${$('shop-postcode').value.trim()} Tübingen\nHinweise: ${$('shop-notes').value.trim()||'Keine'}\n\nBitte bestätigt Verfügbarkeit und Endbetrag und sendet mir einen sicheren Zahlungslink. Ich weiß, dass dies noch keine verbindliche Bestellung ist.`;sendWhatsApp(msg);});
+$('shop-form').addEventListener('submit',e=>{e.preventDefault();const entries=catalog.filter(p=>cart[p.id]>0);if(!entries.length){alert('Bitte füge zuerst Produkte zum Warenkorb hinzu.');return;}const subtotal=entries.reduce((s,p)=>s+p.price*cart[p.id],0);const lines=entries.map(p=>`${cart[p.id]} × ${p.name} (${euro(p.price)} je Stück)` ).join('\n');const msg=`Hallo BRINGIO! Ich möchte eine Warenkorb-Anfrage senden.\nSupermarkt: ${$('catalog-shop').value}\nWarenkorb:\n${lines}\nVorläufiger Warenwert: ${euro(subtotal)}\nServicegebühr (vorläufig): 14,90 €\nGeschätzte Summe: ${euro(subtotal+14.90)}\nName: ${$('shop-name').value.trim()}\nTelefon: ${$('shop-phone').value.trim()}\nLieferadresse: ${$('shop-address').value.trim()}, ${$('shop-postcode').value.trim()} Tübingen\nHinweise: ${$('shop-notes').value.trim()||'Keine'}\n\nBitte bestätigt Verfügbarkeit und Endbetrag und sendet mir einen sicheren Zahlungslink. Ich weiß, dass dies noch keine verbindliche Bestellung ist.`;sendWhatsApp(msg);});
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
 </body></html>

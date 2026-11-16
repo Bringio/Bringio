@@ -33,3 +33,7 @@ GITHUB UPDATE
 VOR DEM ECHTEN START
 Impressum, Datenschutzerklärung, AGB/Widerruf soweit anwendbar, Preis-/Lieferbedingungen, Gewerbe- und Steuerfragen sowie Zahlungs- und Erstattungsprozess klären. Nicht als live zahlungsfähig bewerben, bevor Stripe/Backend und diese Punkte eingerichtet sind.
 \nUPDATE: Das Formular „Persönliche Einkaufsliste“ enthält jetzt Name, Telefonnummer, Lieferadresse, PLZ, gewünschtes Zeitfenster und optionale Hinweise. Diese Angaben werden in die WhatsApp-Anfrage übernommen. Es erfolgt weiterhin keine automatische Zahlung; ein sicherer Zahlungslink muss nach Prüfung separat bereitgestellt werden.\n
+
+Aktuelle Einrichtung: Der Shop bietet Kaufland, Lidl, ALDI und REWE als Auswahl.
+WICHTIG: Die Produktpreise im Demo-Katalog sind noch keine verifizierten Live-Filialpreise.
+Vor echtem Zahlungsbetrieb müssen die Preise je Filiale und Produkt geprüft und regelmäßig aktualisiert werden.
