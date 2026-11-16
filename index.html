@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#15392f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>BRINGIO – Dein Einkauf. Direkt zu dir.</title>
+<style>
+:root{--green:#15392f;--lime:#a7f432;--cream:#f6f7f1;--ink:#17231e;--muted:#64736b;--line:#e2e8e2}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:var(--green);color:white;padding:18px 22px;position:sticky;top:0;z-index:5}
+.nav{max-width:1080px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-size:1.55rem;font-weight:900;letter-spacing:.08em}.brand span{color:var(--lime)}
+.nav small{color:#d6e6dc}
+main{max-width:1080px;margin:auto;padding:28px 18px 70px}
+.hero{background:linear-gradient(125deg,#15392f,#245844);color:white;border-radius:26px;padding:42px 30px;display:grid;grid-template-columns:1.25fr .75fr;gap:25px;align-items:center;overflow:hidden}
+.eyebrow{color:var(--lime);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+h1{font-size:clamp(2.2rem,6vw,4.3rem);line-height:1.04;margin:12px 0}
+.hero p{color:#e1eee6;max-width:560px}.heroIcon{font-size:7rem;text-align:center;filter:drop-shadow(0 12px 18px #071b14)}
+.btn{border:0;border-radius:12px;background:var(--lime);color:#173326;font-weight:800;padding:13px 19px;cursor:pointer;text-decoration:none;display:inline-block}
+.section{margin-top:38px}.section h2{font-size:1.7rem;margin:0 0 8px}.sub{color:var(--muted);margin-top:0}
+.steps,.shops{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:19px}
+.card strong{display:block;margin:7px 0}.num{width:34px;height:34px;border-radius:50%;background:#eaf7dc;color:#28532d;display:grid;place-items:center;font-weight:900}
+.shops{grid-template-columns:repeat(5,1fr)}
+.shop{background:white;border:1px solid var(--line);border-radius:14px;padding:16px 8px;text-align:center;font-weight:800;cursor:pointer}
+.shop[aria-pressed=true]{border:2px solid #4f8b36;background:#f0f9e8}
+form{background:white;border:1px solid var(--line);border-radius:22px;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-weight:700;margin-bottom:6px}input,textarea,select{width:100%;padding:12px;border:1px solid #ccd6ce;border-radius:10px;font:inherit;background:white}
+textarea{min-height:130px;resize:vertical}.full{grid-column:1/-1}.price{background:#f0f7eb;border-radius:14px;padding:16px;display:flex;justify-content:space-between;align-items:center;font-weight:800}
+.note{font-size:.88rem;color:var(--muted)}footer{background:var(--green);color:#dbe8df;padding:26px 18px;text-align:center}
+#result{display:none;background:#eaf7dc;border:1px solid #cce7b5;padding:14px;border-radius:12px;white-space:pre-wrap}
+@media(max-width:700px){.hero{grid-template-columns:1fr;padding:30px 22px}.heroIcon{display:none}.steps{grid-template-columns:1fr}.shops{grid-template-columns:repeat(2,1fr)}form{grid-template-columns:1fr}.full{grid-column:auto}.nav small{display:none}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="brand">BRING<span>IO</span></div><small>Persönlicher Einkaufsservice · Tübingen</small></div></header>
+<main>
+<section class="hero">
+ <div><div class="eyebrow">Einkaufen leicht gemacht</div><h1>Dein Einkauf.<br>Direkt zu dir.</h1>
+ <p>Du schickst uns deine Einkaufsliste. Wir kaufen für dich ein und bringen alles bequem zu dir nach Hause.</p>
+ <a class="btn" href="#bestellen">Jetzt Einkauf anfragen</a></div>
+ <div class="heroIcon" aria-hidden="true">🛒</div>
+</section>
+<section class="section"><h2>So einfach geht’s</h2><p class="sub">Mehr Zeit für die Dinge, die dir wichtig sind.</p>
+ <div class="steps">
+  <div class="card"><div class="num">1</div><strong>Einkaufsliste senden</strong><span>Wähle deinen Supermarkt und trage deine gewünschten Produkte ein.</span></div>
+  <div class="card"><div class="num">2</div><strong>Wir erledigen den Einkauf</strong><span>Wir kaufen nach deiner Liste ein und bewahren den Kassenbon auf.</span></div>
+  <div class="card"><div class="num">3</div><strong>Nach Hause liefern lassen</strong><span>Du erhältst deine Einkäufe direkt an deine Haustür.</span></div>
+ </div>
+</section>
+<section class="section"><h2>Dein Supermarkt</h2><p class="sub">Wähle den Laden, in dem wir für dich einkaufen sollen.</p>
+ <div class="shops" id="shops">
+  <button class="shop" type="button" aria-pressed="true">Kaufland</button><button class="shop" type="button" aria-pressed="false">Lidl</button><button class="shop" type="button" aria-pressed="false">ALDI</button><button class="shop" type="button" aria-pressed="false">EDEKA</button><button class="shop" type="button" aria-pressed="false">REWE</button>
+ </div>
+</section>
+<section class="section" id="bestellen"><h2>Deine Einkaufsanfrage</h2><p class="sub">Fülle das Formular aus. Wir bestätigen Verfügbarkeit, Lieferzeit und den endgültigen Servicepreis persönlich.</p>
+<form id="orderForm">
+ <div class="full"><label for="items">Was sollen wir einkaufen?</label><textarea id="items" required placeholder="Zum Beispiel:&#10;2 × Milch 1,5 %&#10;1 × Vollkornbrot&#10;6 × Eier&#10;1 kg Äpfel"></textarea></div>
+ <div><label for="name">Dein Name</label><input id="name" required autocomplete="name" placeholder="Vor- und Nachname"></div>
+ <div><label for="phone">Telefonnummer</label><input id="phone" required type="tel" autocomplete="tel" placeholder="+49 …"></div>
+ <div class="full"><label for="address">Lieferadresse in Tübingen</label><input id="address" required autocomplete="street-address" placeholder="Straße und Hausnummer"></div>
+ <div><label for="postcode">Postleitzahl</label><input id="postcode" required inputmode="numeric" placeholder="z. B. 72070"></div>
+ <div><label for="time">Gewünschtes Zeitfenster</label><select id="time"><option>Nach Absprache</option><option>10:00–12:00 Uhr</option><option>12:00–14:00 Uhr</option><option>16:00–18:00 Uhr</option><option>18:00–20:00 Uhr</option></select></div>
+ <div class="full"><label for="notes">Hinweise (optional)</label><textarea id="notes" style="min-height:75px" placeholder="Ersatzprodukte, bevorzugte Marken oder weitere Hinweise"></textarea></div>
+ <div class="full price"><span>Servicegebühr – ab</span><span>14,90 €</span></div>
+ <p class="full note">Die Kosten der Einkäufe werden separat anhand des Kassenbons abgerechnet. Die Servicegebühr und mögliche Fahrtkosten werden vor dem Einkauf bestätigt. Diese Anfrage ist noch keine verbindliche Bestellung und löst keine Zahlung aus.</p>
+ <div class="full"><button class="btn" type="submit">Anfrage vorbereiten</button></div>
+ <div class="full" id="result" role="status"></div>
+</form>
+</section>
+<section class="section card"><h2>Persönlich. Einfach. Zuverlässig.</h2><p>BRINGIO startet in Tübingen. Unser Ziel ist ein unkomplizierter Einkaufsservice mit transparenter Abrechnung und dem originalen Kassenbon.</p><p class="note">BRINGIO befindet sich im Aufbau. Bestellungen werden erst angenommen, sobald der Service offiziell gestartet ist.</p></section>
+</main>
+<footer><strong>BRINGIO</strong><br>Dein Einkauf. Direkt zu dir.<br><small>© BRINGIO · Tübingen</small></footer>
+<script>
+let selectedShop='Kaufland';
+document.querySelectorAll('.shop').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.shop').forEach(b=>b.setAttribute('aria-pressed','false'));btn.setAttribute('aria-pressed','true');selectedShop=btn.textContent;}));
+document.getElementById('orderForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const v=id=>document.getElementById(id).value.trim();
+ const summary=`BRINGIO – Einkaufsanfrage (unverbindlich)\\nSupermarkt: ${selectedShop}\\nProdukte:\\n${v('items')}\\nName: ${v('name')}\\nTelefon: ${v('phone')}\\nAdresse: ${v('address')}, ${v('postcode')} Tübingen\\nLieferzeit: ${v('time')}\\nHinweise: ${v('notes')||'Keine'}`;
+ const box=document.getElementById('result');box.style.display='block';box.textContent='Deine Anfrage wurde auf diesem Gerät vorbereitet. Für den echten Versand muss BRINGIO noch eine Kontaktadresse bzw. ein Bestellsystem verbinden.\\n\\n'+summary;
+});
+</script>
+<script>if ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {})); }</script>
+</body></html>

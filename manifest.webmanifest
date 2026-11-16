@@ -1,0 +1,19 @@
+{
+  "name": "BRINGIO – Dein Einkauf. Direkt zu dir.",
+  "short_name": "BRINGIO",
+  "lang": "de-DE",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f1",
+  "theme_color": "#15392f",
+  "description": "Persönlicher Einkaufsservice in Tübingen.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
