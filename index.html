@@ -67,7 +67,13 @@ textarea{min-height:130px;resize:vertical}.full{grid-column:1/-1}.price{backgrou
  <div class="full"><label for="notes">Hinweise (optional)</label><textarea id="notes" style="min-height:75px" placeholder="Ersatzprodukte, bevorzugte Marken oder weitere Hinweise"></textarea></div>
  <div class="full price"><span>Servicegebühr – ab</span><span>14,90 €</span></div>
  <p class="full note">Die Kosten der Einkäufe werden separat anhand des Kassenbons abgerechnet. Die Servicegebühr und mögliche Fahrtkosten werden vor dem Einkauf bestätigt. Diese Anfrage ist noch keine verbindliche Bestellung und löst keine Zahlung aus.</p>
- <div class="full"><button class="btn" type="submit">Anfrage vorbereiten</button></div>
+ <div class="full">
+  <label style="display:flex;gap:10px;align-items:flex-start;font-weight:500">
+   <input id="whatsappConsent" type="checkbox" required style="width:auto;margin-top:5px">
+   <span>Ich bin damit einverstanden, dass meine Angaben zum Bearbeiten meiner Einkaufsanfrage per WhatsApp an BRINGIO übermittelt werden.</span>
+  </label>
+ </div>
+ <div class="full"><button class="btn" type="submit">Anfrage per WhatsApp senden</button></div>
  <div class="full" id="result" role="status"></div>
 </form>
 </section>
@@ -81,7 +87,11 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
  e.preventDefault();
  const v=id=>document.getElementById(id).value.trim();
  const summary=`BRINGIO – Einkaufsanfrage (unverbindlich)\\nSupermarkt: ${selectedShop}\\nProdukte:\\n${v('items')}\\nName: ${v('name')}\\nTelefon: ${v('phone')}\\nAdresse: ${v('address')}, ${v('postcode')} Tübingen\\nLieferzeit: ${v('time')}\\nHinweise: ${v('notes')||'Keine'}`;
- const box=document.getElementById('result');box.style.display='block';box.textContent='Deine Anfrage wurde auf diesem Gerät vorbereitet. Für den echten Versand muss BRINGIO noch eine Kontaktadresse bzw. ein Bestellsystem verbinden.\\n\\n'+summary;
+ const box=document.getElementById('result');
+ box.style.display='block';
+ box.textContent='WhatsApp wird geöffnet. Bitte prüfe deine Angaben und tippe dort selbst auf „Senden“. Deine Anfrage gilt erst als übermittelt, wenn du sie in WhatsApp abschickst.';
+ const whatsappUrl='https://wa.me/491777064275?text='+encodeURIComponent(summary);
+ window.open(whatsappUrl,'_blank','noopener,noreferrer');
 });
 </script>
 <script>if ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {})); }</script>
