@@ -26,3 +26,4 @@ keine Zahlungen und bestätigt keine verbindlichen Bestellungen.
 Vor dem offiziellen Betrieb müssen insbesondere Impressum, Datenschutz,
 Kontaktangaben, Preis-/Gebührenregeln und die rechtlichen/steuerlichen
 Voraussetzungen geprüft und ergänzt werden.
+\nAKTUALISIERUNG\nDie Website zeigt nicht mehr den Hinweis, dass keine Anfrage möglich ist. Das Formular öffnet WhatsApp mit einer konkreten Einkaufsanfrage. Der Kunde sendet die Nachricht selbst. BRINGIO bestätigt danach persönlich Verfügbarkeit, voraussichtliche Kosten und Lieferzeit.\n
