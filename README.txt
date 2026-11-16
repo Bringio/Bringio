@@ -32,3 +32,4 @@ GITHUB UPDATE
 
 VOR DEM ECHTEN START
 Impressum, Datenschutzerklärung, AGB/Widerruf soweit anwendbar, Preis-/Lieferbedingungen, Gewerbe- und Steuerfragen sowie Zahlungs- und Erstattungsprozess klären. Nicht als live zahlungsfähig bewerben, bevor Stripe/Backend und diese Punkte eingerichtet sind.
+\nUPDATE: Das Formular „Persönliche Einkaufsliste“ enthält jetzt Name, Telefonnummer, Lieferadresse, PLZ, gewünschtes Zeitfenster und optionale Hinweise. Diese Angaben werden in die WhatsApp-Anfrage übernommen. Es erfolgt weiterhin keine automatische Zahlung; ein sicherer Zahlungslink muss nach Prüfung separat bereitgestellt werden.\n
